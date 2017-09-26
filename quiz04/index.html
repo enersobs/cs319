@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function showValues() {
+                var favanimal;
+                favanimal = document.animal.favorite.value;
+                alert(favanimal);
+            }
+        </script>
+        <form name=animal ID=animal action=# method=get>
+            <p>What is your favorite animal?: <input type="text" name="favorite" ID="favorite"></p>
+            <p><input type="button" name="submit" value="Submit" onclick="showValues();"></p>
+        </form>
+    </body>
+</html>
