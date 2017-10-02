@@ -1,0 +1,41 @@
+<! DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Name Cleanup</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Name Cleanup</h1>
+        <form name="cleanup" ID="cleanup" action="#" method="get">
+            <p>First Name:<br>
+                <input type="text" name="firstname" ID="firstname"></p>
+            <p>Middle Name:<br>
+                <input type="text" name="midname" ID="midname"></p>
+            <p>Last Name:<br>
+                <input type="text" name="lastname" ID="lastname"></p>
+            <input type="button" value="Cleanup Name" name="generate_button" ID="generate_button" onclick="cleanup_name();">
+            <p>Full Name:<br>
+                <input type="text" name="fullname" ID="fullname"></p>
+        </form>
+        <script>
+            function cleanup_name() {
+                var varFirst;
+                var varMid;
+                var varLast;
+                var varFull;
+                
+                varFirst = document.cleanup.firstname.value;
+                varMid = document.cleanup.midname.value;
+                varLast = document.cleanup.lastname.value;
+                
+                varFirst = varFirst.trim();
+                varMid = varMid.trim();
+                varLast = varLast.trim();
+                
+                varFull = varFirst + " " + varMid +" " + varLast;
+                
+                document.getElementById("fullname").value = varFull;
+            }
+        </script>
+    </body>
+</html>

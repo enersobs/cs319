@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Temperature Converter</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Temperature Converter</h1>
+        <form name="converter" ID="converter" action="#" method="get">
+            <p>
+                Temperature in Fahrenheit:<br>
+                <input type="text" name="f" id="f">
+            </p>
+            <p>
+                <input type=button value="F to C" name="ftoc" ID="ftoc" onclick="convert_ftoc();">
+                <input type=button value="C to F" name="ctof" ID="ctof" onclick="convert_ctof();">
+            </p>
+            <p>
+                Temperature in Celsius:<br>
+                <input type="text" name="c" id="c">
+            </p>
+        </form>
+        <script>
+            function convert_ftoc() {
+                var varf;
+                var varc;
+                
+                varf = document.converter.f.value;
+                varc = (varf - 32) * (5/9);
+                
+                document.getElementById("c").value = varc;
+                document.getElementById("c").style.backgroundColor = "lightgreen";
+                document.getElementById("f").style.backgroundColor = "white";
+            }
+            
+            function convert_ctof() {
+                var varf;
+                var varc;
+                
+                varc = document.converter.c.value;
+                varf = (varc * (9/5)) + 32;
+                
+                document.getElementById("f").value = varf;
+                document.getElementById("f").style.backgroundColor = "lightgreen";
+                document.getElementById("c").style.backgroundColor = "white";
+            }
+        </script>
+    </body>
+</html>
