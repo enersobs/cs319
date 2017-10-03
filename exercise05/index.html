@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Exercise 5</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Months</h1>
+        <script>
+            function find_month(){
+                var varmonth = document.getElementById("monthnumber").value;
+
+                if (varmonth == 1) {
+                    alert("January");
+                } else if (varmonth == 2) {
+                        alert("Feburary");
+                } else if(varmonth == 3) {
+                        alert("March");
+                } else if(varmonth == 4) {
+                        alert("April");
+                } else if(varmonth == 5) {
+                        alert("May");
+                } else if(varmonth == 6) {
+                        alert("June");
+                } else if(varmonth == 7) {
+                        alert("July");
+                } else if(varmonth == 8) {
+                        alert("August");
+                } else if(varmonth == 9) {
+                        alert("September");
+                } else if(varmonth == 10) {
+                        alert("October");
+                } else if(varmonth == 11) {
+                        alert("November");
+                } else if(varmonth == 12) {
+                        alert("December");
+                } else {
+                    alert("I don't think that number corresponds to a month");
+                    document.month.monthnumber.focus();
+                    return false;
+                }
+            }
+        </script>
+        <form id="month" name="month" action="#" method="get" onsubmit="return find_month();">
+            <p>
+                Month Number: 
+                <input type="text" name="monthnumber" id="monthnumber">
+            </p>
+            <input type="submit" id="submitnumber" name="submitnumber" Value="Submit">
+        </form>
+
+    </body>
+</html>
