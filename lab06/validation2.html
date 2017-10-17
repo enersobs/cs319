@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Validation</title>
+        <meta charset="utf-8">
+        <script>
+            function formValidate() {
+                //alert("Hello")
+                var varFirst = document.valform.firstname.value;
+                var varLast = document.valform.lastname.value;
+                var varEmail = document.valform.emailad.value;
+                var varAge = document.valform.age.value;
+                
+                if (varFirst=="" && varLast=="" && varEmail=="" && varAge=="") {
+                    alert("Please enter the following information");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varFirst=="" && varLast=="" && varEmail=="") {
+                    alert("Please enter First and Last name, as well as your email.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varFirst=="" && varLast=="" && varAge=="") {
+                    alert("Please enter First and Last name, as well as your age.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varEmail=="" && varLast=="" && varAge=="") {
+                    alert("Please enter your Last name, email, and age.");
+                    document.valform.lastname.focus();
+                    return false;
+                } else if (varEmail=="" && varFirst=="" && varAge=="") {
+                    alert("Please enter your First name, email, and age.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varFirst=="" && varLast=="") {
+                    alert("Please enter First and Last name.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varFirst=="" && varEmail=="") {
+                    alert("Please enter First name and email address.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varFirst=="" && varAge=="") {
+                    alert("Please enter First name and age.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varLast=="" && varEmail=="") {
+                    alert("Please enter Last name and email address.");
+                    document.valform.lastname.focus();
+                    return false;
+                } else if (varLast=="" && varAge=="") {
+                    alert("Please enter Last name and age.");
+                    document.valform.lastname.focus();
+                    return false;
+                } else if (varEmail=="" && varAge=="") {
+                    alert("Please enter email and age.");
+                    document.valform.emailad.focus();
+                    return false;
+                } else if (varLast=="") {
+                    alert("Please enter Last name.");
+                    document.valform.lastname.focus();
+                    return false;
+                } else if (varFirst=="") {
+                    alert("Please enter First name.");
+                    document.valform.firstname.focus();
+                    return false;
+                } else if (varEmail== "") {
+                    alert("Please enter email address.");
+                    document.valform.emailad.focus();
+                    return false;
+                } else if (varEmail.endsWith("@uwec.edu") == false) {
+                    alert("Please enter a valid uwec email.");
+                    document.valform.emailad.focus();
+                    return false;
+                } else if (varAge=="") {
+                    alert("Please enter age.");
+                    document.valform.age.focus();
+                    return false;
+                } else if (isNaN(varAge) == true) {
+                    alert("Please enter a number.");
+                    document.valform.age.focus();
+                    return false;
+                } else if (varAge < 18) {
+                    alert("You must be 18 or older");
+                    document.valform.age.focus();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="valform" id="valform" action="http://yoda.cs.uwec.edu/cs319/students/siasmj/echo.php" method="get" onsubmit="return formValidate();">
+            <p>First Name:
+                <input type="text" name="firstname" id="firstname">
+            </p>
+            <p>Last Name:
+                <input type="text" name="lastname" id="lastname">
+            </p>
+            <p>Email Address:
+                <input type="text" name="emailad" id="emailad">
+            </p>
+            <p>Age:
+                <input type="text" name="age" id="age">
+            </p>
+            <input type="submit" name="submitname" id="submitname">
+        </form>
+    </body>
+</html>
