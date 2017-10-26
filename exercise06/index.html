@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Guess the Number</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function checkNumber() {
+                //alert("test");
+                var varCorrect = 5;
+                var varNumber = document.getElementById("numberinput").value;
+                varNumber = varNumber.trim();
+                
+                if (varNumber == "") {
+                    alert("Please enter a number.");
+                    document.getElementById("numberinput").focus();
+                    return false;
+                } else if (isNaN(varNumber) == true) {
+                    alert("This is not a number. Please enter a number.");
+                    document.getElementById("numberinput").focus();
+                    return false;
+                } else if (varNumber < 1 || varNumber > 10) {
+                    alert("Please enter a number between 1 and 10");
+                    document.getElementById("numberinput").focus();
+                    return false;
+                } else if (varNumber > varCorrect) {
+                    alert("Hint: Guess a lower number");
+                    document.getElementById("numberinput").focus();
+                    return false;
+                } else if (varNumber < varCorrect) {
+                    alert("Hint: Guess a higher number");
+                    document.getElementById("numberinput").focus();
+                    return false;
+                } else {
+                    alert("Correct!");
+                    return true;
+                }
+            }
+        </script>
+        <form name="numberform" id="numberform" action="#" method="get" onsubmit="return checkNumber();">
+            <p>Enter number:
+                <input type="text" name="numberinput" id="numberinput">
+            </p>
+            <input type="submit" name="numbersubmit" id="numbersubmit">
+        </form>
+    </body>
+</html>
